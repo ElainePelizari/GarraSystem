@@ -22,4 +22,12 @@ class Enderecos extends Model
         return $this->hasMany('App\Transportadoras');
     }
 
+    public function empresas(){
+        return $this->hasMany('App\Empresas');
+    }
+
+    public function funcionarios(){
+        return $this->hasMany('App\Funcionarios');
+    }
+
 }

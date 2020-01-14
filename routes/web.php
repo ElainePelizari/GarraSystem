@@ -59,4 +59,22 @@ Route::get('/estoques/apagar/{id}', 'EstoqueControlador@destroy');
 Route::get('/estoques/editar/{id}', 'EstoqueControlador@edit');
 Route::post('/estoques/{id}', 'EstoqueControlador@update');
 
+//Routes de empresas
+Route::get('/empresas', 'EmpresaControlador@index');
+Route::get('/empresas/novo', 'EmpresaControlador@create');
+Route::post('/empresas', 'EmpresaControlador@store');
+Route::get('/empresas/detalhes/{id}', 'EmpresaControlador@show');
+Route::get('/empresas/apagar/{id}', 'EmpresaControlador@destroy');
+Route::get('/empresas/editar/{id}', 'EmpresaControlador@edit');
+Route::post('/empresas/{id}', 'EmpresaControlador@update');
+
+//Routes de funcionarios
+Route::get('/funcionarios', 'FuncionarioControlador@index');
+Route::get('/funcionarios/novo', 'FuncionarioControlador@create');
+Route::post('/funcionarios', 'FuncionarioControlador@store');
+Route::get('/funcionarios/detalhes/{id}', 'FuncionarioControlador@show');
+Route::get('/funcionarios/apagar/{id}', 'FuncionarioControlador@destroy');
+Route::get('/funcionarios/editar/{id}', 'FuncionarioControlador@edit');
+Route::post('/funcionarios/{id}', 'FuncionarioControlador@update');
+
 

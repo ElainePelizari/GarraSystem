@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Transportadoras;
+use App\Empresas;
 use App\Enderecos;
 
-class TransportadoraControlador extends Controller
+class EmpresaControlador extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class TransportadoraControlador extends Controller
      */
     public function index()
     {
-        $trans = Transportadoras::all();
-        return view('transportadoras/transportadoras', compact('trans'));
+        $empres = Empresas::all();
+        return view('empresas/empresas', compact('empres'));
     }
 
     /**
@@ -27,7 +27,7 @@ class TransportadoraControlador extends Controller
      */
     public function create()
     {
-        return view('transportadoras/novoTransportador');
+        return view('empresas/novaEmpresa');
     }
 
     /**
@@ -41,7 +41,7 @@ class TransportadoraControlador extends Controller
         $regras = [
             'razaoSocial'  => 'required|min:6',
             'inscEstadual' => 'required|min:10',
-            'email' => 'required|email|unique:transportadoras',
+            'email' => 'required|email|unique:empresas',
             'fone' => 'required|min:11',
             'cnpj' => 'required|min:14|cnpj'
         ];
@@ -62,13 +62,13 @@ class TransportadoraControlador extends Controller
         $end = Enderecos::where('numero', $numero)->first();
         echo($end);
         if(isset($end)){
-            $tran = new Transportadoras();
-            $tran->razaoSocial = $request->input('razaoSocial');
-            $tran->cnpj = $request->input('cnpj');
-            $tran->inscEstadual = $request->input('inscEstadual');
-            $tran->email = $request->input('email');
-            $tran->fone = $request->input('fone');
-            $end->transportadoras()->save($tran);
+            $empre = new Empresas();
+            $empre->razaoSocial = $request->input('razaoSocial');
+            $empre->cnpj = $request->input('cnpj');
+            $empre->inscEstadual = $request->input('inscEstadual');
+            $empre->email = $request->input('email');
+            $empre->fone = $request->input('fone');
+            $end->empresas()->save($empre);
          }
         else{
             $end = new Enderecos(); 
@@ -79,16 +79,16 @@ class TransportadoraControlador extends Controller
             $end->uf = $request->input('uf');
             $end->numero = $request->input('numero');
             $end->save();
-            $tran = new Transportadoras();
-            $tran->razaoSocial = $request->input('razaoSocial');
-            $tran->cnpj = $request->input('cnpj');
-            $tran->inscEstadual = $request->input('inscEstadual');
-            $tran->email = $request->input('email');
-            $tran->fone = $request->input('fone');
-            $end->transportadoras()->save($tran);
+            $empre = new Empresas();
+            $empre->razaoSocial = $request->input('razaoSocial');
+            $empre->cnpj = $request->input('cnpj');
+            $empre->inscEstadual = $request->input('inscEstadual');
+            $empre->email = $request->input('email');
+            $empre->fone = $request->input('fone');
+            $end->empresas()->save($empre);
         }
 
-        return redirect('transportadoras');
+        return redirect('empresas');
     }
 
     /**
@@ -99,11 +99,11 @@ class TransportadoraControlador extends Controller
      */
     public function show($id)
     {
-        $tran = Transportadoras::find($id);
-        if(isset($tran)){
-            return view('transportadoras/detalhesTransportadora', compact('tran'));
+        $empre = Empresas::find($id);
+        if(isset($empre)){
+            return view('empresas/detalhesEmpresa', compact('empre'));
         }
-        return redirect('transportadoras');
+        return redirect('empresas');
     }
 
     /**
@@ -114,11 +114,11 @@ class TransportadoraControlador extends Controller
      */
     public function edit($id)
     {
-        $tran = Transportadoras::find($id);
-        if(isset($tran)){
-            return view('transportadoras/editarTransportadora', compact('tran'));
+        $empre = Empresas::find($id);
+        if(isset($empre)){
+            return view('empresas/editarEmpresa', compact('empre'));
         }
-        return redirect('transportadoras');
+        return redirect('empresas');
     }
 
     /**
@@ -130,16 +130,16 @@ class TransportadoraControlador extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tran = Transportadoras::find($id);
-        if(isset($tran)){
-            $tran->razaoSocial = $request->input('razaoSocial');
-            $tran->cnpj = $request->input('cnpj');
-            $tran->inscEstadual = $request->input('inscEstadual');
-            $tran->email = $request->input('email');
-            $tran->fone = $request->input('fone');
-            $tran->save();
+        $empre = Empresas::find($id);
+        if(isset($empre)){
+            $empre->razaoSocial = $request->input('razaoSocial');
+            $empre->cnpj = $request->input('cnpj');
+            $empre->inscEstadual = $request->input('inscEstadual');
+            $empre->email = $request->input('email');
+            $empre->fone = $request->input('fone');
+            $empre->save();
         }
-        return redirect('transportadoras');
+        return redirect('empresas');
     }
 
     /**
@@ -150,10 +150,10 @@ class TransportadoraControlador extends Controller
      */
     public function destroy($id)
     {
-        $tran = Transportadoras::find($id);
-        if(isset($tran)){
-            $tran->delete();
+        $empre = Empresas::find($id);
+        if(isset($empre)){
+            $empre->delete();
         }
-        return redirect('transportadoras');
+        return redirect('empresas');
     }
 }

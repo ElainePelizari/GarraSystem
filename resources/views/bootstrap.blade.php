@@ -53,6 +53,14 @@
             </a>
           </li>
 
+          <li @if($current=="empresas") class="nav-link active" @else class="nav-item" @endif>
+            <a class="nav-link" href="/empresas" role="tab">Empresas do Grupo </a>
+          </li>
+
+          <li @if($current=="funcionarios") class="nav-link active" @else class="nav-item" @endif>
+            <a class="nav-link" href="/funcionarios" role="tab">Funcionários </a>
+          </li>
+
           <li @if($current=="clientes") class="nav-link active" @else class="nav-item" @endif>
             <a class="nav-link" href="/clientes" role="tab">Clientes </a>
           </li>
