@@ -127,12 +127,12 @@ class FuncionarioControlador extends Controller
     public function update(Request $request, $id)
     {
         $fun = Funcionarios::find($id);
-        if(isset($empre)){
+        if(isset($fun)){
             $fun->nome = $request->input('nome');
             $fun->dataNasc = $request->input('dataNasc');
             $fun->email = $request->input('email');
             $fun->fone = $request->input('fone');
-            $empre->save();
+            $fun->save();
         }
         return redirect('funcionarios');
     }
