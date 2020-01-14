@@ -58,7 +58,7 @@
 
                 <label for="preco">Preço</label>
                 <input type="text" class="form-control {{ $errors->has('preco') ? 'is-invalid' : '' }}" name="preco" 
-                    id="preco" placeholder="Vermelho" value="{{ old('preco') }}">
+                    id="preco" placeholder="R$ 10.99" value="{{ old('preco') }}">
                 @if ($errors->has('preco'))
                     <div class="invalid-feedback">
                     {{ $errors->first('preco') }}

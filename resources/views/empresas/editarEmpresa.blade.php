@@ -10,23 +10,23 @@
 
                 <label for="razaoSocial">Razão Social</label>
                 <input type="text" class="form-control" name="razaoSocial" value="{{$empre->razaoSocial}}"
-                    id="razaoSocial" placeholder="Preencha a razão social">
+                    id="razaoSocial" placeholder="Ex: Comércio Téxtil LTDA">
 
                 <label for="cnpj">CNPJ</label>
                 <input type="text" class="form-control" name="cnpj" value="{{$empre->cnpj}}"
-                    id="cnpj" placeholder="Preencha o CNPJ">
+                    id="cnpj" placeholder="Ex: 99.999.999/9999-99">
 
                 <label for="inscEstadual">Inscrição Estadual</label>
                 <input type="text" class="form-control" name="inscEstadual" value="{{$empre->inscEstadual}}"
-                    id="inscEstadual" placeholder="Preencha a inscrição estadual">
+                    id="inscEstadual" placeholder="Ex: 999.99999-99">
 
                 <label for="email">E-mail</label>
                 <input type="email" class="form-control" name="email" value="{{$empre->email}}"
-                    id="email" placeholder="Preencha o e-mail">
+                    id="email" placeholder="Ex: textil@gmail.com">
 
                 <label for="fone">Fone</label>
                 <input type="number" class="form-control" name="fone" value="{{$empre->fone}}"
-                    id="fone" placeholder="Preencha o telefone">
+                    id="fone" placeholder="Ex: 99 9 99999999">
 
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Salvar</button>

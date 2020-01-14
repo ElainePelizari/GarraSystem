@@ -61,6 +61,8 @@ class ProdutoGarraControlador extends Controller
         $prod->cor = $request->input('cor');
         $prod->preco = $request->input('preco');
         $prod->save();
+
+        return redirect('produtos');
     }
 
     /**
@@ -104,7 +106,6 @@ class ProdutoGarraControlador extends Controller
     {
         $prod = ProdutosGarra::find($id);
         if(isset($prod)){
-            $prod = new ProdutosGarra();
             $prod->nome = $request->input('nome');
             $prod->tamanho = $request->input('tamanho');
             $prod->tipo = $request->input('tipo');

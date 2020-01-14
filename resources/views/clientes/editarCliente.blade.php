@@ -1,4 +1,4 @@
-@extends('layout.app', ["current" => "clientes"])
+@extends('layout.app', ["current" => "empresas"])
 
 @section('body')
 
@@ -10,23 +10,23 @@
 
                 <label for="razaoSocial">Razão Social</label>
                 <input type="text" class="form-control" name="razaoSocial" value="{{$cat->razaoSocial}}"
-                    id="razaoSocial" placeholder="Preencha a razão social do cliente">
+                    id="razaoSocial" placeholder="Ex: Comércio Téxtil LTDA">
 
                 <label for="cnpj">CNPJ</label>
                 <input type="text" class="form-control" name="cnpj" value="{{$cat->cnpj}}"
-                    id="cnpj" placeholder="Preencha o CNPJ social do cliente">
+                    id="cnpj" placeholder="Ex: 99.999.999/9999-99">
 
                 <label for="inscEstadual">Inscrição Estadual</label>
                 <input type="text" class="form-control" name="inscEstadual" value="{{$cat->inscEstadual}}"
-                    id="inscEstadual" placeholder="Preencha a inscrição estadual do cliente">
+                    id="inscEstadual" placeholder="Ex: 999.99999-99">
 
                 <label for="email">E-mail</label>
                 <input type="email" class="form-control" name="email" value="{{$cat->email}}"
-                    id="email" placeholder="Preencha o e-mail do cliente">
+                    id="email" placeholder="Ex: textil@gmail.com">
 
                 <label for="fone">Fone</label>
                 <input type="number" class="form-control" name="fone" value="{{$cat->fone}}"
-                    id="fone" placeholder="Preencha o telefone do cliente">
+                    id="fone" placeholder="Ex: 99 9 99999999">
 
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
